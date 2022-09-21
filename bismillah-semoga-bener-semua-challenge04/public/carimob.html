@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>	
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
+
+    <title>Challenge 4 FSW</title>
+
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+        body{
+
+    background: #F1F3FF;
+
+    font-family: 'Helvetica';
+
+    font-weight: 400;
+
+    }
+    nav{
+        display: flex;
+        justify-content: space-around;
+        padding: 20px ;
+    }
+    nav ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+    }
+    nav ul li a{
+        font-size: 19px;
+        text-decoration: none;
+        justify-content: space-between;
+    }
+    .dropdown{
+        position: absolute;
+        left: 100px;
+        top: 500px;
+    }
+    .dropdowndua{
+        position: absolute;
+        left: 300px;
+        top: 500px;
+    }
+    .dropdowntiga{
+        position: absolute;
+        left: 450px;
+        top: 500px;
+    }
+    .dropdownempat{
+        position: absolute;
+        left: 600px;
+        top: 500px;
+    }
+    /*Hamburger Menu*/
+
+    
+    /* Buat Responsive */
+    /* Ukuran Tablet */
+    @media screen and (max-width: 768px) {
+        nav ul{
+            
+        }
+        
+    }
+    @media screen and (max-width: 576px) {
+        nav ul{
+            position: absolute;
+            right: 0;
+            flex-direction: column;
+            background-color: #F1F3FF;
+            z-index: -1;
+            transform: translateX(100);
+            transition: all 1s;
+        }
+        nav ul.slide{
+            transform: translateX(0);
+        }
+        .menu-toggle{
+        display: flex;
+        flex-direction: column;
+        height: 20px;
+        justify-content: space-between;
+        background-color: #0D28A6;
+        position: relative;
+
+        }
+        .menu-toggle input{
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            left: -10px;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .menu-toggle span{
+            display: block;
+            width: 28px;
+            height: 3px;
+            background-color: #F1F3FF;
+            border-radius: 3px ;
+        }
+
+        /*animation*/
+        .menu-toggle {
+
+        }
+        h1{
+            margin: 0;
+            size: 10px;
+            margin-top: -50px;
+            margin-left: -100px;
+            position: relative;
+            width: 300px;
+            height: 108px;
+            left: 10px;
+            top: 10px;
+
+            font-family: 'Helvetica';
+            font-style: normal;
+            font-weight: 70;
+            font-size: 10px;
+            line-height: 150%;
+        }
+        p{
+            position: absolute;
+            margin-top: -30px;
+            margin-left: -100px;
+            width: 468px;
+            height: 60px;
+            left: 136px;
+            top: 301px;
+
+            font-family: 'Helvetica';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        input[type=mulai] {
+            margin-top: -100px;
+            margin-left: -100px;
+            font-family: sans-serif;
+            font-size: 15px;
+            background: #5CB85F;
+            color: white;
+            border: white 3px solid;
+            border-radius: 5px;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 12px;
+            gap: 10px;
+            position: absolute;
+            width: 140px;
+            height: 36px;
+            left: 136px;
+            top: 3777px;
+    }
+    img.gambarbackground{
+        margin-top: 180px;
+        margin-left: -700px;
+        position: relative; 
+        width: 704px; 
+        height: 407px; 
+        left: 10px; 
+        top: 320px;
+    }
+    img.mobil{
+        margin-top: 180px;
+        margin-left: -700px;
+        position: relative; 
+        width: 500px; 
+        height: 200px; 
+        left: 850px; 
+        top: 200px;
+    }
+
+        
+        
+    }
+
+
+
+    h1{
+        position: absolute;
+        width: 568px;
+        height: 108px;
+        left: 136px;
+        top: 177px;
+
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 150%;
+    }
+    p{
+        position: absolute;
+        width: 468px;
+        height: 60px;
+        left: 136px;
+        top: 301px;
+
+
+
+        font-family: 'Helvetica';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    
+    input[type=mulai] {
+        font-family: sans-serif;
+        font-size: 15px;
+        background: #5CB85F;
+        color: white;
+        border: white 3px solid;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 10px;
+        position: absolute;
+        width: 140px;
+        height: 36px;
+        left: 136px;
+        top: 377px;
+    }
+    input[type=regis] {
+        font-family: sans-serif;
+        font-size: 15px;
+        background: #5CB85F;
+        color: white;
+        border: white 3px solid;
+        border-radius: 2px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 10px;
+        position: absolute;
+        width: 65px;
+        height: 20px;
+        left: 1280px;
+        top: 19px;
+
+    }
+    a{
+        font-family: sans-serif;
+        font-size: 15px;
+        left: 1000px;
+        top: 377px;
+    }
+    img.gambarbackground{
+        position: absolute; 
+        width: 704px; 
+        height: 407px; 
+        left: 850px; 
+        top: 320px;
+    }
+    img.mobil{
+        position: absolute; 
+        width: 704px; 
+        height: 407px; 
+        left: 850px; 
+        top: 200px;
+    }
+    img.footer{
+        position: absolute; 
+        width: 1881px; 
+        height: 263px; 
+        left: -100px; 
+        top: 650px;
+    }
+
+    </style>
+
+</head>
+<body>
+    <input type="mulai" value="Mulai Sewa Mobil">
+    <input type="regis" value="Register">  >
+
+    <nav>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo">
+
+        </div>
+        <ul>
+            <li><a href="ourservice.html">Our Service</a></li>
+            <li><a href="whyus.html">Why Us</a></li>
+            <li><a href="testi.html">Testimonial</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+
+        <div class="menu-toggle">
+            <input type="checkbox" style="opacity: 0;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pilih Tipe Driver
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Dengan Sopir</a>
+            <a class="dropdown-item" href="#">Tanpa Sopir (Lepas Kunci)</a>
+        </div>
+    </div>
+
+    <div class="dropdowndua">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pilih Tanggal
+        </button>
+        
+        </div>
+    </div>
+
+    <div class="dropdowntiga">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Pilih Waktu
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">08.00</a>
+            <a class="dropdown-item" href="#">09.00</a>
+            <a class="dropdown-item" href="#">10.00</a>
+            <a class="dropdown-item" href="#">11.00</a>
+            <a class="dropdown-item" href="#">12.00</a>
+        </div>
+    </div>
+
+    <div class="dropdownempat">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Jumlah Penumpang
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">1</a>
+            <a class="dropdown-item" href="#">2</a>
+            <a class="dropdown-item" href="#">3</a>
+            <a class="dropdown-item" href="#">4</a>
+            <a class="dropdown-item" href="#">5</a>
+            <a class="dropdown-item" href="#">6</a>
+        </div>
+    </div>
+
+    <script>
+        <script type="text/javascript" src="./scripts/binar.js"></script>
+        <script type="text/javascript" src="./scripts/app.example.js"></script>
+        <script type="text/javascript" src="./scripts/car.example.js"></script>
+        <script type="text/javascript" src="./scripts/main.example.js"></script>
+
+        <script>const menuToogle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('nav ul');
+
+        menuToogle.addEventListener('click', function(){
+            nav.classList.toggle('slide');
+        });</script> 
+        
+        <script>$('.datepicker').datepicker({
+        format: 'mm/dd/yyyy',
+        startDate: '-3d'
+    });</script>
+        
+
+    </script>
+
+    <h1>Sewa & Rental Mobil Terbaik di Purbalingga </h1>
+    <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas
+        <br> terbaik dengan harga terjangkau. Selalu siap melayani kebutuhanmu
+        <br> untuk sewa mobil delama 24 jam
+    </p>
+    <img class="gambarbackground" src="img/Back.png" alt="Logo">
+    <img class="mobil" src="img/mobil.png" alt="Logo"  >
+    <img class="footer" src="img/footer.png" alt="footer">
+</body>
+</html>
